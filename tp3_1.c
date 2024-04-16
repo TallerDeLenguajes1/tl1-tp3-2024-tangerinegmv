@@ -8,7 +8,6 @@ int main()
     int empresa[ANIO][MES];
     int suma = 0;
     float promedio = 0;
-    int elementos = ANIO * MES;
     int min = 51000;
     int max = 0;
     int mesMax = 0, mesMin = 0, anioMax = 0, anioMin = 0;
@@ -35,7 +34,7 @@ int main()
         {
             suma = suma + empresa[i][j];
         }
-        promedio = suma / elementos;
+        promedio = suma / 12;
         printf("\nPromedio de ganancia por anio %d: %.2f ", i + 1, promedio);
         suma = 0;
     }
