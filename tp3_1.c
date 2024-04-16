@@ -40,5 +40,25 @@ int main()
         suma = 0;
     }
 
+    for (int i = 0; i < ANIO; i++)
+    {
+        for (int j = 0; j < MES; j++)
+        {
+            if (empresa[i][j] < min)
+            {
+                min = empresa[i][j];
+                mesMin = i + 1;
+                anioMin = j + 1;
+            }
+            if (empresa[i][j] > max)
+            {
+                max = empresa[i][j];
+                mesMax = i + 1;
+                anioMax = j + 1;
+            }
+        }
+    }
+    printf("\nEl valor maximo obtenido fue de %d, el mes %d, año %d", max, mesMax, anioMax);
+    printf("\nEl valor minimo obtenido fue de %d, el mes %d, año %d", min, mesMin, anioMin);
     return 0;
 }
