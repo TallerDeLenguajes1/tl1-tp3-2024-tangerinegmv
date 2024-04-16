@@ -6,6 +6,12 @@
 int main()
 {
     int empresa[ANIO][MES];
+    int suma = 0;
+    float promedio = 0;
+    int elementos = ANIO * MES;
+    int min = 51000;
+    int max = 0;
+    int mesMax = 0, mesMin = 0, anioMax = 0, anioMin = 0;
     srand(time(NULL));
     for (int i = 0; i < ANIO; i++)
     {
@@ -23,5 +29,16 @@ int main()
         }
         printf("\n");
     }
+    for (int i = 0; i < ANIO; i++)
+    {
+        for (int j = 0; j < MES; j++)
+        {
+            suma = suma + empresa[i][j];
+        }
+        promedio = suma / elementos;
+        printf("\nPromedio de ganancia por anio %d: %.2f ", i + 1, promedio);
+        suma = 0;
+    }
+
     return 0;
 }
